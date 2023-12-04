@@ -5,6 +5,7 @@ import { ChannelType } from "@prisma/client";
 import ChatInput from "@/components/chat/ChatInput";
 import { ChatHeader } from "@/components/chat/ChatHeader";
 import ChatMessages from "@/components/chat/ChatMessages";
+import MediaRoom from "@/components/MediaRoom";
 
 import { currentProfile } from "@/lib/currentProfile";
 import { db } from "@/lib/db";
@@ -76,7 +77,7 @@ const Channel = async ({
           />
         </>
       )}
-      {/* {channel.type === ChannelType.AUDIO && (
+      {channel.type === ChannelType.AUDIO && (
         <MediaRoom
           chatId={channel.id}
           video={false}
@@ -89,7 +90,7 @@ const Channel = async ({
           video={true}
           audio={true}
         />
-      )} */}
+      )}
     </div>
    );
 }

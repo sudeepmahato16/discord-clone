@@ -22,11 +22,9 @@ const ActionTooltip: FC<ActionTooltipProps> = ({
   return (
     <TooltipProvider>
       <Tooltip>
-        <TooltipTrigger>{children}</TooltipTrigger>
+        <TooltipTrigger asChild>{children}</TooltipTrigger>
         <TooltipContent side={side} align={align}>
-          <p className="font-normal text-[14px]  text-gray-700">
-            {label}
-          </p>
+          <p className="font-normal text-[14px]  text-gray-700">{label}</p>
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>
