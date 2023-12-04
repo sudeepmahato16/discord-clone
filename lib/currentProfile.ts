@@ -1,8 +1,9 @@
-import { auth } from "@clerk/nextjs";
+import { NextApiRequest } from "next";
+import { auth, getAuth } from "@clerk/nextjs/server";
 import { db } from "@/lib/db";
 
-export const currentProfile = async () => {
-  const { userId } = auth();
+export const currentProfile = async (req?: NextApiRequest) => {
+  const { userId } = req ? getAuth(req) : auth();
 
   if (!userId) {
     return null;
@@ -10,9 +11,9 @@ export const currentProfile = async () => {
 
   const profile = await db.profile.findUnique({
     where: {
-      userId
-    }
+      userId,
+    },
   });
 
   return profile;
-}
+};

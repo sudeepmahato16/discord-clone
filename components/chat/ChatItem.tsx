@@ -97,11 +97,12 @@ const ChatItem: FC<ChatItemProps> = ({
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       const url = qs.stringifyUrl({
-        url: `${socketUrl}/id`,
+        url: `${socketUrl}/${id}`,
         query: socketQuery,
       });
 
       await axios.patch(url, values);
+      setIsEditing(false)
     } catch (error) {}
   };
 
