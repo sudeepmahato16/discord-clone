@@ -42,15 +42,15 @@ const DeleteServerModal = () => {
 
   return (
     <Dialog open={isModalOpen} onOpenChange={onClose}>
-      <DialogContent className="bg-white text-gray-700 p-0 overflow-hidden !w-[360px]">
-      <DialogHeader className="pt-8 px-6 mb-4">
-          <DialogTitle className="text-xl  font-semibold">
+      <DialogContent className="bg-white text-gray-700 dark:bg-[#313338] dark:text-gray-300 p-0 overflow-hidden !w-[380px]">
+      <DialogHeader className="pt-8 px-6 mb-6">
+          <DialogTitle className="text-xl  font-semibold dark:text-gray-100">
             Delete Server
           </DialogTitle>
-          <DialogDescription className=" text-zinc-500">
-            Are you sure you want to do this? <br />
-            <span className="text-indigo-500 font-semibold">
-              {server?.name}
+          <DialogDescription className=" text-zinc-500 dark:text-gray-300">
+            Are you sure you want to do this? 
+             <span className="text-indigo-500 font-semibold ml-1">
+               {server?.name}
             </span>{" "}
             will be permanently deleted.
           </DialogDescription>
@@ -60,7 +60,7 @@ const DeleteServerModal = () => {
             <Button disabled={isLoading} onClick={onClose} variant="ghost">
               Cancel
             </Button>
-            <Button disabled={isLoading} variant="primary" onClick={onClick}>
+            <Button disabled={isLoading} variant="destructive" onClick={onClick}>
               Confirm
             </Button>
           </div>

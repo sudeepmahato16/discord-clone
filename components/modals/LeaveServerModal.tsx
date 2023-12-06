@@ -42,12 +42,12 @@ const LeaveServerModal = () => {
 
   return (
     <Dialog open={isModalOpen} onOpenChange={onClose}>
-      <DialogContent className="bg-white text-gray-700 p-0 overflow-hidden !w-[360px]">
+      <DialogContent className="bg-white dark:bg-[#313338] dark:text-gray-300 text-gray-700 p-0 overflow-hidden !w-[360px]">
         <DialogHeader className="pt-8 px-6 mb-4">
-          <DialogTitle className="text-xl font-semibold">
+          <DialogTitle className="text-xl font-semibold dark:text-gray-100">
             Leave Server
           </DialogTitle>
-          <DialogDescription className=" text-zinc-500">
+          <DialogDescription className=" text-zinc-500 dark:text-gray-300">
             Are you sure you want to leave{" "}
             <span className="font-semibold text-indigo-500">
               {server?.name}
@@ -60,7 +60,7 @@ const LeaveServerModal = () => {
             <Button disabled={isLoading} onClick={onClose} variant="ghost">
               Cancel
             </Button>
-            <Button disabled={isLoading} variant="primary" onClick={onClick}>
+            <Button disabled={isLoading} variant="destructive" onClick={onClick}>
               Confirm
             </Button>
           </div>

@@ -97,13 +97,13 @@ export const MembersModal = () => {
 
   return (
     <Dialog open={isModalOpen} onOpenChange={onClose}>
-      <DialogContent className="bg-white text-black overflow-hidden">
+      <DialogContent className="bg-white text-black overflow-hidden dark:bg-[#313338] dark:text-gray-300">
         <DialogHeader className="pt-8 px-6">
-          <DialogTitle className="text-2xl text-center font-bold">
+          <DialogTitle className="text-2xl text-center font-bold dark:text-gray-100">
             Manage Members
           </DialogTitle>
           <DialogDescription 
-            className="text-center text-zinc-500"
+            className="text-center text-zinc-500 dark:text-gray-400"
           >
             {server?.members?.length} Members
           </DialogDescription>
@@ -117,7 +117,7 @@ export const MembersModal = () => {
                   {member.profile.name}
                   {roleIconMap[member.role]}
                 </div>
-                <p className="text-xs text-zinc-500">
+                <p className="text-xs text-zinc-500 dark:text-gray-400">
                   {member.profile.email}
                 </p>
               </div>
@@ -125,7 +125,7 @@ export const MembersModal = () => {
                 <div className="ml-auto">
                   <DropdownMenu>
                     <DropdownMenuTrigger>
-                      <MoreVertical className="h-4 w-4 text-zinc-500" />
+                      <MoreVertical className="h-4 w-4 text-zinc-500 dark:text-gray-400" />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent side="left">
                       <DropdownMenuSub>
@@ -177,7 +177,7 @@ export const MembersModal = () => {
               )}
               {loadingId === member.id && (
                 <Loader2
-                  className="animate-spin text-zinc-500 ml-auto w-4 h-4"
+                  className="animate-spin text-zinc-500 dark:text-gray-400 ml-auto w-4 h-4"
                 />
               )}
             </div>
